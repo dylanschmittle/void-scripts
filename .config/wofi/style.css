@@ -1,0 +1,46 @@
+#window {
+margin: 5px;
+border: 2px solid Gray;
+background-color: Gray;
+}
+
+#input {
+margin: 5px;
+border: 2px solid SlateGrey;
+background-color: SlateGrey;
+}
+
+#inner-box {
+margin: 5px;
+border: 2px solid SlateGray;
+background-color: SlateGray;
+}
+
+#outer-box {
+margin: 5px;
+border: 2px solid SlateGray;
+background-color: SlateGray;
+}
+
+#scroll {
+margin: 5px;
+border: 2px solid DimGray;
+background-color: DimGray;
+}
+
+#text {
+margin: 5px;
+border: 0px solid DimGray;
+background-color: SlateGray;
+} 
+
+#search-box {
+margin: 5px;
+border: 2px solid Silver;
+background-color: SlateGray;
+}
+
+#entry:selected {
+background-color: DimGray;
+}
+
