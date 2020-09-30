@@ -17,7 +17,7 @@ sudo env XBPS_ARCH=x86_64 xbps-install --repository=http://alpha.de.repo.voidlin
 To add software to the tree:
 
 ```
-sudo env XBPS_ARCH=x86_64 xbps-install --repository=http://alpha.de.repo.voidlinux.org/current -r /glibc -S pkg
+sudo env XBPS_ARCH=x86_64 xbps-install --repository=http://alpha.de.repo.voidlinux.org/current -r /glibc -S pkg-config
 ```
 
 Once this is set-up you need a small program to kick off the glibc executables. I copied this one:
