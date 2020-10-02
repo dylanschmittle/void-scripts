@@ -68,10 +68,10 @@ glibc cmd args
 ```
 And then it might still not run, soooooo do this 
 
-## Method 2 Docker X11 (Better Method)
+## Method 2 Docker X11 (Easier Method, But Insecure)
 
 Build and Drop into a x11 ready container
-
+WARN : root X11
 ```
 podman build . -t fedora-x11-glibc:latest
 podman run --net=host --env="DISPLAY" -it --volume="$HOME/.Xauthority:/root/.Xauthority:rw" fedora-x11-glibc:latest sh $SHELL_OR_APP
