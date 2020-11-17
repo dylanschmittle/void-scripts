@@ -1,7 +1,3 @@
-#zstyle :omz:plugins:ssh-agent agent-forwarding on
-#zstyle :omz:plugins:ssh-agent identities id_rsa
-#zstyle :omz:plugins:ssh-agent lifetime 4h
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,18 +8,15 @@ fi
 # KiTTY ZSH completion  
 #autoload -Uz compinit
 #compinit
-# Completion for kitty
 #kitty + complete setup zsh | source /dev/stdin
 
-# Serverless Path
-#export PATH="$HOME/.serverless/bin:$PATH"
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/go/bin:$PATH
-export PATH=$HOME/bin:$PATH
-#export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-# Path to your oh-my-zsh installation.
+#export PATH=$HOME/go/bin:$PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=$HOME/.local/bin:$PATH
 #export PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:$PATH
+#export PATH="$HOME/.serverless/bin:$PATH"
+
+# Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_COLORIZE_STYLE="colorful"
 
@@ -31,7 +24,6 @@ export ZSH_COLORIZE_STYLE="colorful"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -92,6 +84,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# Basic
 plugins+=(git)
 # Feature Plugins
 plugins+=(fancy-ctrl-z colorize colored-man-pages sudo virtualenvwrapper)
@@ -99,17 +93,17 @@ plugins+=(fancy-ctrl-z colorize colored-man-pages sudo virtualenvwrapper)
 plugins+=(aws npm pip git python helm kubectl tig docker docker-compose python)
 # Alias Plugins
 plugins+=(systemd)
-# Autosuggestions (external)
+
+# Autosuggestions
 #git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 plugins+=(zsh-autosuggestions)
-# Syntax Highlighting (Extrenal)
-#
+# Syntax Highlighting
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 plugins+=(zsh-syntax-highlighting)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -117,7 +111,7 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vi'
+  export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
@@ -130,25 +124,29 @@ export ARCHFLAGS="-arch x86_64"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Example aliases
-#alias cock="kubectl run -i --tty --rm 8------o --image=dylanschmittle/parrot:latest --restart=Never -- zsh"
-#alias ssh="kitty +kitten ssh"
-alias zshconfig="$EDITOR ~/.zshrc"
-alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
-alias ls="exa"
-alias vpn-on="sudo protonvpn c -f"                                                                      
-alias vpn-restart="sudo protonvpn r"                                                                    
-alias vpn-off="sudo protonvpn d"                                                                        
-alias vpn-info="sudo protonvpn s"                                                                       
-alias vpn-secure="sudo protonvpn c --sc"                                                                
-alias vpn-p2p="sudo protonvpn c --p2p"
+
+alias ssh="kitty +kitten ssh"
 alias d="kitty +kitten diff"
 
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+
+alias ls="lsd"
+#alisa ls="lsa"
+
+#alias vpn-on="sudo protonvpn c -f"                                                                      
+#alias vpn-restart="sudo protonvpn r"                                                                    
+#alias vpn-off="sudo protonvpn d"                                                                        
+#alias vpn-info="sudo protonvpn s"                                                                       
+#alias vpn-secure="sudo protonvpn c --sc"                                                                
+#alias vpn-p2p="sudo protonvpn c --p2p"
+
 alias waterfox-wl="MOZ_ENABLE_WAYLAND=1 waterfox"
+
 # Compleation
+
 #source <(helm completion zsh)
 #source <(eksctl completion zsh)
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#source /home/dylans/.config/broot/launcher/bash/br
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /home/dylan/.config/broot/launcher/bash/br
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
